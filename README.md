@@ -26,3 +26,11 @@ http://localhost:3000/api/seed
 # Production notes:
 
 
+docker compose -f docker-compose.prod.yml build
+
+
+
+docker buildx build --platform linux/amd64,linux/arm64 -t gerardo01/teslo-shop:1.2.0 --push .
+
+
+docker buildx build --platform linux/amd64,linux/arm64 -t registry.digitalocean.com/gerardo-devtalles-registry/teslo-shop:1.3.0 --push .
